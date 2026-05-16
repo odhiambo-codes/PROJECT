@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <title>About Sky Palace Hotel</title>
+
+  <style>
+
+    *{
+      padding:0;
+      margin:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background-color:aliceblue;
+      font-family:Arial, Helvetica, sans-serif;
+      color:#222;
+      line-height:1.8;
+    }
+
+    /* NAVIGATION */
+
+    nav{
+      background:black;
+      color:white;
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav h2{
+      letter-spacing:2px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      height:70vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)),
+      url("https://images.unsplash.com/photo-1566073771259-6a8506099945")
+      center/cover no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:15px;
+    }
+
+    .hero-content p{
+      font-size:22px;
+    }
+
+    /* MAIN CONTENT */
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:purple;
+      margin-bottom:10px;
+    }
+
+    .about-text{
+      font-size:19px;
+      margin-bottom:40px;
+    }
+
+    /* IMAGE GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+      margin-top:40px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      border-radius:15px;
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    /* FEATURES */
+
+    .features{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .feature-box{
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      text-align:center;
+      transition: 0.2s;
+    }
+    .feature-box:hover{
+        transform: translateY(-10px);
+    }
+
+    .feature-box i{
+      font-size:45px;
+      color:purple;
+      margin-bottom:15px;
+    }
+
+    .feature-box h3{
+      margin-bottom:10px;
+      color:#111;
+    }
+
+    /* EXPERIENCE SECTION */
+
+    .experience{
+      margin-top:70px;
+      background:white;
+      padding:40px;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .experience h2{
+      color:purple;
+      margin-bottom:20px;
+      font-size:35px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:30px;
+      margin-top:60px;
+    }
+
+    footer p{
+      margin:10px 0;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:40px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      .section-title h2{
+        font-size:30px;
+      }
+
+      .about-text{
+        font-size:17px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <h2>SKY PALACE</h2>
+
+    <a href="hotel.html">
+      <i class="fa-solid fa-arrow-left"></i> Back
+    </a>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <div class="hero">
+
+    <div class="hero-content">
+
+      <h1>About Sky Palace Hotel</h1>
+
+      <p>Your Home Above the City</p>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>Who We Are</h2>
+
+      <p>Luxury • Comfort • Excellence</p>
+
+    </div>
+
+    <div class="about-text">
+
+      <p>
+
+        Sky Palace Hotel is a premium luxury destination designed
+        to deliver unforgettable experiences through comfort,
+        elegance, and exceptional hospitality.
+
+      </p>
+
+      <br>
+
+      <p>
+
+        Located in a peaceful and secure environment with
+        breathtaking skyline views, Sky Palace Hotel combines
+        modern architecture with world-class services to create
+        the perfect escape for travelers, business professionals,
+        families, and couples.
+
+      </p>
+
+      <br>
+
+      <p>
+
+        Since our establishment, we have remained committed to
+        offering guests a relaxing atmosphere, luxurious rooms,
+        delicious dining experiences, and personalized customer
+        care that exceeds expectations.
+
+      </p>
+
+      <br>
+
+      <p>
+
+        Every corner of Sky Palace Hotel is carefully designed
+        to provide warmth, sophistication, and comfort. From our
+        elegant suites and rooftop lounge to our wellness spa
+        and fine dining restaurant, every experience is crafted
+        to make our guests feel valued and appreciated.
+
+      </p>
+
+    </div>
+
+    <!-- IMAGE GALLERY -->
+
+    <div class="gallery">
+
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+
+      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-bed"></i>
+
+        <h3>Luxury Accommodation</h3>
+
+        <p>
+          Spacious and stylish rooms designed for maximum comfort.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-utensils"></i>
+
+        <h3>Fine Dining</h3>
+
+        <p>
+          Enjoy delicious local and international cuisine prepared by expert chefs.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-spa"></i>
+
+        <h3>Spa & Wellness</h3>
+
+        <p>
+          Refresh your body and mind in our modern wellness center.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fa-solid fa-wifi"></i>
+
+        <h3>Fast Internet</h3>
+
+        <p>
+          Stay connected with unlimited high-speed Wi-Fi throughout the hotel.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- EXPERIENCE SECTION -->
+
+    <div class="experience">
+
+      <h2>Our Mission</h2>
+
+      <p>
+
+        Our mission is to provide every guest with an exceptional
+        hospitality experience built on professionalism, comfort,
+        safety, and customer satisfaction.
+
+      </p>
+
+      <br>
+
+      <p>
+
+        At Sky Palace Hotel, we believe that true luxury is not
+        only about beautiful spaces but also about creating
+        meaningful memories and ensuring every guest feels at home.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>Sky Palace Hotel</h2>
+
+    <p>Luxury Above The City</p>
+
+    <p>
+      <i class="fa-solid fa-phone"></i>
+      +254 XXX XXX XXX
+    </p>
+
+    <p>
+      <i class="fa-solid fa-envelope"></i>
+      info@skypalacehotel.com
+    </p>
+
+    <p>
+      Open 24 Hours — 7 Days A Week
+    </p>
+
+  </footer>
+
+</body>
+</html>

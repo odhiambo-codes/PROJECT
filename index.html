@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sky Palace Hotel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      font-family:Arial, sans-serif;
+      overflow-x:hidden;
+    }
+
+    /* HEADER */
+
+    header{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      backdrop-filter:blur(15px);
+      background:rgba(15,23,42,0.75);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 70px;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:bold;
+      letter-spacing:2px;
+      color:#fbbf24;
+      text-shadow:0 0 20px rgba(251,191,36,0.4);
+    }
+
+    nav{
+      display:flex;
+      gap:35px;
+      align-items:center;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      font-size:17px;
+      font-weight:bold;
+      position:relative;
+      transition:0.4s;
+    }
+
+    nav a:hover{
+      color:#fbbf24;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0%;
+      height:3px;
+      border-radius:20px;
+      background:#fbbf24;
+      transition:0.4s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    /* ANNOUNCEMENT */
+
+    .announcement{
+      background:linear-gradient(to right,#f59e0b,#fbbf24);
+      color:#111827;
+      font-size:18px;
+      font-weight:bold;
+      padding:14px;
+      margin-top:95px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.7),
+      rgba(0,0,0,0.7)),
+      url("https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1470&auto=format&fit=crop");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .overlay{
+      max-width:900px;
+      animation:fadeIn 2s ease;
+    }
+
+    .overlay h1{
+      font-size:95px;
+      margin-bottom:20px;
+      color:white;
+      letter-spacing:4px;
+      text-shadow:0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .overlay p{
+      font-size:32px;
+      color:#fbbf24;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* WELCOME SECTION */
+
+    .header{
+      max-width:1250px;
+      margin:auto;
+      padding:120px 70px 70px;
+      text-align:center;
+    }
+
+    .header h2{
+      font-size:55px;
+      margin-bottom:35px;
+      color:#fbbf24;
+    }
+
+    .header p{
+      font-size:21px;
+      line-height:2;
+      color:#d1d5db;
+      margin-bottom:30px;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:35px;
+      padding:20px 70px 90px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      border-radius:25px;
+      transition:0.5s;
+      box-shadow:0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.05) translateY(-10px);
+    }
+
+    /* MAIN CONTENT */
+
+    .main{
+      max-width:1250px;
+      margin:auto;
+      padding:70px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:35px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .main h2{
+      font-size:55px;
+      text-align:center;
+      color:#fbbf24;
+      margin-bottom:40px;
+    }
+
+    .main h1{
+      font-size:52px;
+      text-align:center;
+      margin-top:70px;
+      margin-bottom:35px;
+      color:#fbbf24;
+    }
+
+    .main p{
+      font-size:20px;
+      line-height:2;
+      color:#d1d5db;
+      margin-bottom:22px;
+    }
+
+    .main strong{
+      font-size:32px;
+      color:white;
+      display:block;
+      margin-top:25px;
+      margin-bottom:15px;
+    }
+
+    .main ul{
+      margin-top:30px;
+      padding-left:25px;
+    }
+
+    .main ul li{
+      margin-bottom:20px;
+      font-size:20px;
+      color:#e5e7eb;
+    }
+
+    /* APPLY */
+
+    .apply{
+      margin-top:90px;
+      background:linear-gradient(to right,#111827,#1e293b);
+      color:white;
+      text-align:center;
+      padding:50px;
+      font-size:24px;
+      font-weight:bold;
+      border-top:3px solid #fbbf24;
+      border-bottom:3px solid #fbbf24;
+      letter-spacing:1px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      padding:100px 40px;
+      text-align:center;
+      background:#020617;
+    }
+
+    .contact h2{
+      font-size:55px;
+      color:#fbbf24;
+      margin-bottom:20px;
+    }
+
+    .contact-sub{
+      font-size:20px;
+      color:#cbd5e1;
+      margin-bottom:60px;
+    }
+
+    .contact-cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      max-width:1250px;
+      margin:auto;
+    }
+
+    .contact-card{
+      background:linear-gradient(145deg,#111827,#1e293b);
+      padding:40px 30px;
+      border-radius:25px;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .contact-card:hover{
+      transform:translateY(-12px);
+      border-color:#fbbf24;
+    }
+
+    .contact-card h3{
+      color:#fbbf24;
+      font-size:25px;
+      margin-bottom:18px;
+    }
+
+    .contact-card p{
+      color:#e5e7eb;
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+        padding:25px;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .overlay h1{
+        font-size:60px;
+      }
+
+      .overlay p{
+        font-size:24px;
+      }
+
+      .header{
+        padding:90px 25px 50px;
+      }
+
+      .gallery{
+        padding:20px 25px 70px;
+      }
+
+      .main{
+        margin:20px;
+        padding:40px 25px;
+      }
+
+      .main h2,
+      .main h1,
+      .contact h2{
+        font-size:40px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="navbar">
+
+    <h2 class="logo">SKY PALACE</h2>
+
+    <nav>
+      <a href="about.html">About</a>
+      <a href="booking.html">Room Booking</a>
+      <a href="deliv.html">Delivery Services</a>
+    </nav>
+
+  </div>
+
+</header>
+
+<marquee class="announcement" behavior="scroll" direction="left">
+  Welcome to Sky Palace Hotel — Where Luxury Meets the Sky
+</marquee>
+
+<div class="hero">
+
+  <div class="overlay">
+
+    <h1>SKY PALACE HOTEL</h1>
+
+    <p>Luxury Above The City</p>
+
+  </div>
+
+</div>
+
+<div class="header">
+
+  <h2>Welcoming message to Sky Palace Hotel</h2>
+
+  <p>
+    Welcome to Sky Palace Hotel, a place where luxury, comfort, and unforgettable experiences come together. Designed for travelers who appreciate elegance and exceptional service, Sky Palace Hotel offers a peaceful escape above the busy world below.
+  </p>
+
+  <p>
+    Whether you are visiting for business, vacation, or a special celebration, our hotel provides the perfect environment to relax, refresh, and enjoy premium hospitality. From beautifully designed rooms to world-class amenities, every detail at Sky Palace Hotel is crafted to make your stay truly extraordinary.
+  </p>
+
+  <p>
+    At Sky Palace Hotel, we believe that every guest deserves royal treatment.
+  </p>
+
+</div>
+
+<div class="gallery">
+
+  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1470&auto=format&fit=crop">
+
+  <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1470&auto=format&fit=crop">
+
+  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1470&auto=format&fit=crop">
+
+</div>
+
+<div class="main">
+
+  <h2>Our Rooms</h2>
+
+  <p>
+    Luxury Designed for Comfort. At Sky Palace Hotel, every room is designed
+    to provide the perfect balance between luxury and relaxation.
+  </p>
+
+  <strong>Standard Room</strong>
+
+  <p>
+    Perfect for solo travelers or short stays. Features: Comfortable queen
+    bed, high-speed Wi-Fi, smart TV, air conditioning, private bathroom and
+    24-hour room service.
+  </p>
+
+  <strong>Deluxe Room</strong>
+
+  <p>
+    Ideal for guests who want extra space and comfort. Features: King-size
+    bed, beautiful city view, smart TV and entertainment system, work desk,
+    luxury bathroom and complimentary breakfast.
+  </p>
+
+  <strong>Executive Suite</strong>
+
+  <p>
+    For guests who desire premium comfort and privacy. Features: Spacious
+    living area, king-size luxury bed, private balcony, mini bar, luxury
+    bathroom with bathtub and exclusive VIP services.
+  </p>
+
+  <h1>Hotel Amenities & Services</h1>
+
+  <p>
+    At Sky Palace Hotel, we provide premium services to ensure a relaxing
+    and enjoyable stay.
+  </p>
+
+  <ul>
+    <li>Free High-Speed Wi-Fi</li>
+    <li>Fine Dining Restaurant</li>
+    <li>Rooftop Lounge with beautiful city views</li>
+    <li>Outdoor Swimming Pool</li>
+    <li>Modern Fitness Center</li>
+    <li>Spa & Wellness Center</li>
+    <li>24 Hour Room Service</li>
+  </ul>
+
+  <p>
+    <strong>Guest Experience</strong><br>
+    At Sky Palace Hotel, every guest is treated like royalty. Our dedicated
+    team works around the clock to ensure your stay is smooth, comfortable,
+    and unforgettable.
+  </p>
+
+</div>
+
+<div class="apply">
+  If you come across this announcement, note there are vacancies in room cleaning areas...
+</div>
+
+<div class="contact">
+
+  <h2>Contact Us</h2>
+
+  <p class="contact-sub">
+    We are always ready to assist you anytime.
+  </p>
+
+  <div class="contact-cards">
+
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+254 112164401</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>info@skypalacehotel.com</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Location</h3>
+      <p>Nairobi, Kenya</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Working Hours</h3>
+      <p>Open 24 Hours – 7 Days a Week</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

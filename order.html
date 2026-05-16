@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <title>Sky Palace Food Ordering</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f5f7fa;
+      color:#222;
+    }
+
+    nav{
+      background:#111;
+      color:white;
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .hero{
+      height:60vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.6),
+      rgba(0,0,0,0.6)),
+      url("https://images.unsplash.com/photo-1504674900247-0877df9cc836")
+      center/cover no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+    }
+
+    .hero h1{
+      font-size:55px;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+      padding:60px 0;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .title h2{
+      font-size:40px;
+      color:purple;
+    }
+
+    .menu{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .food-card{
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .food-card:hover{
+      transform:translateY(-6px);
+    }
+
+    .food-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .food-info{
+      padding:20px;
+    }
+
+    .price{
+      color:purple;
+      font-weight:bold;
+      font-size:20px;
+      margin:10px 0;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      background:purple;
+      color:white;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#5e006e;
+    }
+
+    .order-section{
+      margin-top:70px;
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .order-section h2{
+      text-align:center;
+      color:purple;
+      margin-bottom:25px;
+    }
+
+    form{
+      display:grid;
+      gap:15px;
+    }
+
+    input, select, textarea{
+      padding:15px;
+      border:1px solid #ccc;
+      border-radius:10px;
+    }
+
+    textarea{
+      height:120px;
+    }
+
+    .submit-btn{
+      background:purple;
+      color:white;
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    .success{
+      display:none;
+      margin-top:20px;
+      background:#d4edda;
+      color:#155724;
+      padding:15px;
+      border-radius:10px;
+      text-align:center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h2>SKY PALACE</h2>
+    <a href="hotel.html">Back</a>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <h1>Order Food Online</h1>
+      <p>Fresh Meals Delivered Fast</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="title">
+      <h2>Our Menu</h2>
+    </div>
+
+    <!-- MENU -->
+
+    <div class="menu">
+
+      <div class="food-card">
+        <img src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&w=800&q=80">
+        <div class="food-info">
+          <h3>Italian Pizza</h3>
+          <p>Cheesy pizza with fresh toppings.</p>
+          <div class="price">Ksh 1,200</div>
+          <button onclick="selectMeal('Italian Pizza')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80">
+        <div class="food-info">
+          <h3>Classic Burger</h3>
+          <p>Juicy beef burger with fries.</p>
+          <div class="price">Ksh 950</div>
+          <button onclick="selectMeal('Classic Burger')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80">
+        <div class="food-info">
+          <h3>Grilled Chicken</h3>
+          <p>Well seasoned grilled chicken.</p>
+          <div class="price">Ksh 1,500</div>
+          <button onclick="selectMeal('Grilled Chicken')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+        <div class="food-info">
+          <h3>Beef Steak</h3>
+          <p>Premium steak cooked perfectly.</p>
+          <div class="price">Ksh 2,200</div>
+          <button onclick="selectMeal('Beef Steak')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80">
+        <div class="food-info">
+          <h3>Seafood Platter</h3>
+          <p>Mix of prawns, fish & calamari.</p>
+          <div class="price">Ksh 2,800</div>
+          <button onclick="selectMeal('Seafood Platter')">Order Now</button>
+        </div>
+      </div>
+
+      <div class="food-card">
+  <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80">
+  <div class="food-info">
+    <h3>Chicken Wrap</h3>
+    <p>Spicy chicken wrapped in tortilla.</p>
+    <div class="price">Ksh 800</div>
+    <button onclick="selectMeal('Chicken Wrap')">Order Now</button>
+  </div>
+</div>
+
+    </div>
+
+    <!-- ORDER FORM -->
+
+    <div class="order-section">
+
+      <h2>Place Your Order</h2>
+
+      <form id="orderForm">
+
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="tel" placeholder="Phone Number" required>
+
+        <input type="text" placeholder="Delivery Location" required>
+
+        <select id="mealSelect" required>
+          <option value="">Select Meal</option>
+          <option>Italian Pizza</option>
+          <option>Classic Burger</option>
+          <option>Grilled Chicken</option>
+          <option>Beef Steak</option>
+          <option>Seafood Platter</option>
+          <option>Chicken Wrap</option>
+        </select>
+
+        <textarea placeholder="Additional Instructions"></textarea>
+
+        <button type="submit" class="submit-btn">Place Order</button>
+
+      </form>
+
+      <div class="success" id="successMessage">
+        Order placed successfully! We will contact you shortly.
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function selectMeal(meal){
+      document.getElementById("mealSelect").value = meal;
+      window.scrollTo({
+        top: document.querySelector(".order-section").offsetTop,
+        behavior:"smooth"
+      });
+    }
+
+    document.getElementById("orderForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      document.getElementById("successMessage").style.display = "block";
+      this.reset();
+    });
+
+  </script>
+
+</body>
+</html>
